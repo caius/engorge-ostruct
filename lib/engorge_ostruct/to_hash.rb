@@ -1,6 +1,6 @@
 module OpenStructToHash
   def to_hash
-    instance_variable_get("@table")
+    @table.dup
   end
 end
 
