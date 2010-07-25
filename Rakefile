@@ -2,7 +2,7 @@ require "rake/gempackagetask"
 
 spec = Gem::Specification.new do |s| 
   s.name = "engorge-ostruct"
-  s.version = "0.1"
+  s.version = "0.2"
   s.author = "Caius Durling"
   s.email = "dev@caius.name"
   s.homepage = "http://github.com/caius/engorge-ostruct"
