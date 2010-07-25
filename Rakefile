@@ -15,3 +15,19 @@ end
 Rake::GemPackageTask.new(spec) do |pkg| 
   pkg.need_tar = true 
 end 
+
+begin
+  require "spec"
+  require "spec/rake/spectask"
+
+  desc "Run all specs"
+  Spec::Rake::SpecTask.new('spec') do |t|
+    t.spec_files = FileList['spec/**/*.rb']
+  end
+rescue LoadError
+  puts <<-EOS
+To use rspec for testing you must install rspec gem:
+  [sudo] gem install rspec
+EOS
+  exit(0)
+end
